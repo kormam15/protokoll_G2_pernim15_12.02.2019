@@ -14,16 +14,16 @@ Gruppe: 2
 ___
 
 ### Themen-Übersicht
- - **1)** - [Easyprogrammer](https://github.com/HTLMechatronics/m15-la1-sx/blob/pernim15/protokoll_G2_pernim15_12.02.2019.md#Easyprogrammer)
+ - **1)** - [Easyprogrammer](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Intelligenter-Sensor)
  - **2)** - [Intelligenter Sensor](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Intelligenter-Sensor)
  - **3)** - [Feldbus](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Feldbus)
-     - **3.1)** - [Modbus]()
-     - **3.2)** - [Kommunikation]()
-     - **3.3)** - [Datenmodell]()
-     - **3.4)** - [Function-Codes]()
-     - **3.5)** - [Protokoll Definition]()
-     - **3.6)** - [Request PC -> µC]()
-     - **3.7)** - [Response µC -> PC]()
+     - **3.1)** - [Modbus](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Modbus)
+     - **3.2)** - [Kommunikation](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Kommunikation)
+     - **3.3)** - [Datenmodell](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Datenmodell)
+     - **3.4)** - [Function-Codes](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Function-Code)
+     - **3.5)** - [Protokoll Definition](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Protokoll-Definition)
+     - **3.6)** - [Request PC -> µC](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Request-->-µC)
+     - **3.7)** - [Response µC -> PC](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Response-µC-->-PC)
 ___
 
 ## Easyprogrammer
@@ -43,7 +43,7 @@ Sensoren befinden sich in der Automatisierungspyramide auf der 2. Ebene (Feldebe
 
 ___
 
-## 3.) Feldbus
+## Feldbus
 
 Ein Feldbus ist ein Bussystem, das in einer Anlage Feldgeräte wie Sensoren und Aktoren zwecks Kommunikation mit einem Automatisierungsgerät verbindet. Wenn mehrere Kommunikationsteilnehmer ihre Nachrichten über dieselbe Leitung senden, dann muss festgelegt sein, wer (Kennung) was (Messwert, Befehl) wann (Initiative) sagt. Hierfür gibt es normierte Protokolle. 
 Quelle: [Wikipedia](https://de.wikipedia.org/wiki/Feldbus)  
@@ -65,7 +65,7 @@ Der Zweck von REST liegt schwerpunktmäßig auf der Maschine-zu-Maschine-Kommuni
 
 Quelle: [Wikipedia](https://de.wikipedia.org/wiki/Representational_State_Transfer)  
 
-### 3.1) Modbus
+### Modbus
 
 Das Modbus-Protokoll ist ein Kommunikationsprotokoll, welches auf einem Request/Response Prinzip basiert. Es wurde 1979 von Gould-Modicon für die Kommunikation mit seinen SPS ins Leben gerufen. In der Industrie hat sich der Modbus zu einem Standard entwickelt, da es sich um ein offenes Protokoll handelt. 
 Beispiel: Arduino Nano über UART - Standardisierte Bussysteme (zB UART) haben den Vorteil der Kompartibilität. 
@@ -74,7 +74,7 @@ Beispiel: Arduino Nano über UART - Standardisierte Bussysteme (zB UART) haben d
 
 
 
-### 3.2) Kommunikation 
+### Kommunikation 
 
  Bei der eigentlichen Datenübertragung werden drei Varianten unterschieden: 
 
@@ -100,7 +100,7 @@ Hierbei werden die Frame-Bytes als ASCII-Text versendet. Für die Konfiguration 
 | Startbit | 7 Daten-Bits | Even Parity | 1 Stop-Bit | = 10 Bits | 
 
 
-### 3.3) Datenmodell  
+### Datenmodell  
 
 Das Modbus Daten-Modell unterscheidet vier Tabellen (Adressräume) für: 
 
@@ -114,7 +114,7 @@ Das Modbus Daten-Modell unterscheidet vier Tabellen (Adressräume) für:
 Pro Tabelle können in einer Protocol Data Unit Werte von 0 bis 65535 (dual codierbar in 16-Bit) verwendet werden. Im Modbus data model werden hingegen Adresswerte von 1 bis 65536 verwendet. Ein Adress-Mapping ist daher erforderlich. 
 z.B. Adresse 23 bekommen bei Wert 22 
 
-### 3.4) Function-Codes  
+### Function-Codes  
 
 Der Function-Code in einem Modbus-Frame definiert die Bedeutung des Frames. 
 Für Requests und Non-Error-Responses sind Werte zwischen 1 und 127 zulässig. Dieser Bereich ist in drei Kategorien unterteilt: Function Codes in den Bereichen 65-72 und 100-110 können vom Benutzer individuell vergeben werden, unter den übrigen Werten werden manche von Unternehmen für Produkte verwendet, andere widerum werden von der Modbus community definiert. 
@@ -131,7 +131,7 @@ Folgende Public Function Codes sind definiert:
 | 15 | 0F | Write Multiple Coils |	Bit | 
 | 16 | 10 | Write Multiple Registers | 16-Bit | 
 
-### 3.5) Protokoll Definition 
+### Protokoll Definition 
 
 Ein Modbus-Gateway ist in der Lage verschiedene Modbus-Varianten miteinander zu verbinden, also zum Beispiel die Verbindung eines über die UART-Schnittstelle erreichbaren Sensors mit einem über TCP/IP erreichbaren PC. 
 Das Modbus Application Layer Protocol definiert dabei als Frame sogenannte **Protocol Data Units** (PDU). Diese enthalten noch kein Adressierungsschema, da unterschiedliche Varianten (UART, TCP, ...) auch unterschiedliche Adressierungsarten verwenden. 
@@ -149,7 +149,7 @@ Quelle: [http://modbus.org/](http://modbus.org/)
 | --------------- | --------- | -------- | 
 | 04 | 0000 | 0001 | 
 
-### 3.6) Request PC -> µC
+### Request PC -> µC
 
 Jeder Modbus Serial Line ASCII Frame hat folgenden Aufbau: 
 
@@ -166,7 +166,7 @@ Die **LRC-Prüfsumme** bildet sich so:
 600 - 256 * 2 = 88 Dez.
 -88 Dez. + 256 Dez. = A8 Hex = LRC-Prüfsumme
 
-### 3.7) Response µC -> PC
+### Response µC -> PC
 
 | : | 0C | 04 | 02 | **1752*** | F8 | \r | \n |  
 | --- | --- | --- | --------- | --- | --- | --- | --- |  
