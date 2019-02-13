@@ -67,7 +67,9 @@ Beispiel: Arduino Nano über UART - Standardisierte Bussysteme (zB UART) haben d
 
 ![]()
 
- Bei der eigentlichen Datenübertragung werden drei Varianten unterschieden:
+### 3.2) - Kommunikation -
+
+ Bei der eigentlichen Datenübertragung werden drei Varianten unterschieden: 
 
 | Art | Übertragung |  
 | --------------------------------------- | -------- | 
@@ -82,17 +84,10 @@ Der Kommunikationsablauf beruht auf einem **Server/Client Prinzip**. Der Client 
 Jeder Busteilnehmer muss eine eindeutige Adresse haben, wobei Adresse 0 für einen Broadcast (an alle Knoten) reserviert ist. 
 Der Function-Code ist ein Byte, dass die Art des Requests bzw. der Response genauer festlegt. Für Requests und gültige Responses sind die Werte 1 bis 127 vorgesehen. Für Exception-Responses, also die Rückmeldung eines Fehlers, sind die Werte von 128 bis 255 zu verwenden. Der Function-Code 0 ist nicht erlaubt. 
 
-Der Socket ist der sog. Modbusserver. Er besitzt die Portnummer 502. Erst über die IP-Adresse und die Portnummer (Socket) kann der Rechner etwas mit der Information anfangen. 
--> Warum keine Adresse + Errorcheck? 
-Aufgrund der IP-Adresse und der Prüfsumme (Checksum) 
 
-### Datenmodell
+### 3.3) - Datenmodell - 
 
-1.1 
-
-Daten-Modell
-
-Das Modbus Daten-Modell unterscheidet vier Tabellen (Adressräume) für:
+Das Modbus Daten-Modell unterscheidet vier Tabellen (Adressräume) für: 
 
 | Tabelle | Beschreibung | Beispiel | 
 | ----------- | ---------- | ---------- | 
@@ -104,5 +99,36 @@ Das Modbus Daten-Modell unterscheidet vier Tabellen (Adressräume) für:
 Pro Tabelle können in einer Protocol Data Unit Werte von 0 bis 65535 (dual codierbar in 16-Bit) verwendet werden. Im Modbus data model werden hingegen Adresswerte von 1 bis 65536 verwendet. Ein Adress-Mapping ist daher erforderlich. 
 z.B. Adresse 23 bekommen bei Wert 22 
 
+### 3.4) - Function-Codes - 
+
+Der Function-Code in einem Modbus-Frame definiert die Bedeutung des Frames.
+Für Requests und Non-Error-Responses sind Werte zwischen 1 und 127 zulässig. Dieser Bereich ist in drei Kategorien unterteilt: Function Codes in den Bereichen 65-72 und 100-110 können vom Benutzer individuell vergeben werden, unter den übrigen Werten werden manche von Unternehmen für Produkte verwendet, andere widerum werden von der Modbus community definiert. 
+Folgende Public Function Codes sind definiert: 
+
+| Function-Code | Hex | Name | Typ | 
+| --------------- | --------- | --------- | --- | 
+| 1 | 01 | Read Coils | Bit | 
+| 2 | 02 | Read Discrete Inputs | Bit | 
+| 3 | 03 | Read Holding Registers | 16-Bit | 
+| 4 | 04 | Read Input Register | 16-Bit | 
+| 5 | 05 | Write Single Coil | Bit | 
+| 6 | 06 | Write Single Register | 16-Bit | 
+| 15 | 0F | Write Multiple Coils |	Bit | 
+| 16 | 10 | Write Multiple Registers | 16-Bit | 
+
+### 3.5) - Protokoll Definition - 
+
+Ein Modbus-Gateway ist in der Lage verschiedene Modbus-Varianten miteinander zu verbinden, also zum Beispiel die Verbindung eines über die UART-Schnittstelle erreichbaren Sensors mit einem über TCP/IP erreichbaren PC. 
+Das Modbus Application Layer Protocol definiert dabei als Frame sogenannte **Protocol Data Units** (PDU). Diese enthalten noch kein Adressierungsschema, da unterschiedliche Varianten (UART, TCP, ...) auch unterschiedliche Adressierungsarten verwenden. 
+Die zusätzlichen Spezifikationen für die jeweiligen Varianten definieren dann auch zusätzliche Frame-Felder für die Adressierung und Fehlererkennung, wodurch dann die **Application Data Unit** (ADU) entsteht. 
+Die maximale Größe einer ADU liegt bei Modbus ASCII/RTU bei 256 Bytes und bei Modbus TCP bei 260 Bytes. 
+Der *Socket* ist der sog. Modbusserver. Er besitzt die Portnummer 502. Erst über die IP-Adresse und die Portnummer (Socket) kann der Rechner etwas mit der Information anfangen. Aufgrund der IP-Adresse und der Prüfsumme (Checksum) ist keine Adresse und kein Errorcheck nötig. 
+Quelle: [http://modbus.org/](http://modbus.org/)
+
+![](https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwiO57Dgv7ngAhUNDewKHSQwAiwQjRx6BAgBEAQ&url=https%3A%2F%2Fdiglib.tugraz.at%2Fdownload.php%3Fid%3D576a77eaaad80%26location%3Dbrowse&psig=AOvVaw24petsIik9CS9XPfH-K9B8&ust=1550174377824609)
+
+| Function-Code | Adresse | Anzahl | 
+| --------------- | --------- | -------- | 
+| 04 | 0000 | 0001 | 
 
 ___
