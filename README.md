@@ -42,6 +42,7 @@ ___
 
 Ein Feldbus ist ein Bussystem, das in einer Anlage Feldgeräte wie Sensoren und Aktoren zwecks Kommunikation mit einem Automatisierungsgerät verbindet. Wenn mehrere Kommunikationsteilnehmer ihre Nachrichten über dieselbe Leitung senden, dann muss festgelegt sein, wer (Kennung) was (Messwert, Befehl) wann (Initiative) sagt. Hierfür gibt es normierte Protokolle. 
 Quelle: [Wikipedia](https://de.wikipedia.org/wiki/Feldbus)  
+
 LAN und WLAN-Netzwerke sind keine Feldbussysteme, da diese nicht Echtzeitfähig und viel zu kompliziert sind. 
 
 #### Einsatzgebiete von Feldbussystemen 
@@ -59,6 +60,18 @@ Der Zweck von REST liegt schwerpunktmäßig auf der Maschine-zu-Maschine-Kommuni
 
 Quelle: [Wikipedia](https://de.wikipedia.org/wiki/Representational_State_Transfer)  
 
+### 3.1) - Modbus - 
+
+Das Modbus-Protokoll ist ein Kommunikationsprotokoll, welches auf einem Request/Response Prinzip basiert. Es wurde 1979 von Gould-Modicon für die Kommunikation mit seinen SPS ins Leben gerufen. In der Industrie hat sich der Modbus zu einem Standard entwickelt, da es sich um ein offenes Protokoll handelt. 
+Beispiel: Arduino Nano über UART - Standardisierte Bussysteme (zB UART) haben den Vorteil der Kompartibilität. 
+
+![]()
+
+ Bei der eigentlichen Datenübertragung werden drei Varianten unterschieden:
+
+  | Modbus ASCII | Rein textuelle byteweise Übertragung von Daten. Frames beginnen mit einem Doppelpunkt | 
+  | Modbus RTU (Remote Terminal Unit) | Binäre byteweise Übertragung von Daten | 
+  |  Modbus TCP | Übertragung der Daten in TCP Paketen | 
 
 
 ___
