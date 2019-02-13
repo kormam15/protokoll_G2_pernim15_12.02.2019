@@ -14,16 +14,16 @@ Gruppe: 2
 ___
 
 ### Themen-Übersicht
- - **1)** - [Easyprogrammer](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Intelligenter-Sensor)
+ - **1)** - [Easyprogrammer](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Easyprogrammer)
  - **2)** - [Intelligenter Sensor](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Intelligenter-Sensor)
  - **3)** - [Feldbus](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Feldbus)
      - **3.1)** - [Modbus](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Modbus)
      - **3.2)** - [Kommunikation](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Kommunikation)
      - **3.3)** - [Datenmodell](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Datenmodell)
-     - **3.4)** - [Function-Codes](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Function-Code)
+     - **3.4)** - [Function-Codes](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Function-Codes)
      - **3.5)** - [Protokoll Definition](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Protokoll-Definition)
-     - **3.6)** - [Request PC -> µC](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Request-->-µC)
-     - **3.7)** - [Response µC -> PC](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Response-µC-->-PC)
+     - **3.6)** - [Request PC -> µC](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Request-vomPC-zum-µC)
+     - **3.7)** - [Response µC -> PC](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Response-vom-µC-zum-PC)
 ___
 
 ## Easyprogrammer
@@ -149,7 +149,7 @@ Quelle: [http://modbus.org/](http://modbus.org/)
 | --------------- | --------- | -------- | 
 | 04 | 0000 | 0001 | 
 
-### Request PC -> µC
+### Request vom PC zum µC
 
 Jeder Modbus Serial Line ASCII Frame hat folgenden Aufbau: 
 
@@ -166,7 +166,7 @@ Die **LRC-Prüfsumme** bildet sich so:
 600 - 256 * 2 = 88 Dez.
 -88 Dez. + 256 Dez. = A8 Hex = LRC-Prüfsumme
 
-### Response µC -> PC
+### Response vom µC zum PC
 
 | : | 0C | 04 | 02 | **1752*** | F8 | \r | \n |  
 | --- | --- | --- | --------- | --- | --- | --- | --- |  
