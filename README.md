@@ -87,8 +87,8 @@ Der Function-Code ist ein Byte, dass die Art des Requests bzw. der Response gena
 #### **Modbus ASCII:** 
 Hierbei werden die Frame-Bytes als ASCII-Text versendet. Für die Konfiguration der seriellen Schnittstelle wird standardmäßig 7E1 oder 7N2 verwendet -> nur 7 Daten-Bits! Geräte dürfen im Bedarfsfall aber auch eine davon abweichende Festlegung haben. 
 
-|  | 7 | E | 1 | 
-| --- | --- | --- | --- |  | 
+|  | 7 | E | 1 |  | 
+| --- | --- | --- | --- | --- | 
 | Startbit | 7 Daten-Bits | Even Parity | 1 Stop-Bit | = 10 Bits | 
 
 
@@ -141,5 +141,12 @@ Quelle: [http://modbus.org/](http://modbus.org/)
 | --------------- | --------- | -------- | 
 | 04 | 0000 | 0001 | 
 
+### 3.6) - Request PC -> µC -
+
+Jeder Modbus Serial Line ASCII Frame hat folgenden Aufbau: 
+
+| : | 0C | 04 | 0000 0001 | A8 | \r | \n |  
+| --- | --- | --- | --------- | --- | --- | --- | 
+| 3a | Korrenns Adresse | Function Code | Daten | LRC-Prüfsumme | CR | LF | 
 
 ___
