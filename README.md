@@ -15,7 +15,7 @@ ___
 
 ### Themen-Übersicht
  - **1)** - [Easyprogrammer](https://github.com/HTLMechatronics/m15-la1-sx/blob/pernim15/protokoll_G2_pernim15_12.02.2019.md#Easyprogrammer)
- - **2)** - [Intelligenter Sensor](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Intelligenter_Sensor)
+ - **2)** - [Intelligenter Sensor](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Intelligenter-Sensor)
  - **3)** - [Feldbus](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Feldbus)
      - **3.1)** - [Modbus]()
      - **3.2)** - [Kommunikation]()
@@ -26,7 +26,7 @@ ___
      - **3.7)** - [Response µC -> PC]()
 ___
 
-## 1.) Easyprogrammer
+## Easyprogrammer
 
 Bei Netbeans wird unter `Properties` und `Run` ein bestimmtes Command aufgerufen.  
 Dieses checkt aufgrund der übergebenen Argumente, was aufgerufen werden soll.  
@@ -34,7 +34,7 @@ Dieses checkt aufgrund der übergebenen Argumente, was aufgerufen werden soll.
 
 ___
 
-## 2.) Intelligenter Sensor 
+## Intelligenter Sensor 
 
 Ein intelligenter besitzt eine digitale Elektronik. Er kann selbst Informationen verarbeiten und bietet diese auf standardisierten Schnittstellen an. Standardisierte Schnittstellen haben den Vorteil der Kompatibilität. Ein Beispiel für einen intelligenten Sensor wäre der Temperatorsensor auf unserem µC.  
 Ein unintelligenter Sensor (PT100) kann dies im Gegensatz dazu nicht. 
