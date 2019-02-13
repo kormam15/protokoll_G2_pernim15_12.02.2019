@@ -71,8 +71,8 @@ Beispiel: Arduino Nano über UART - Standardisierte Bussysteme (zB UART) haben d
 
 | Art | Übertragung |  
 | --------------------------------------- | -------- | 
-| Modbus ASCII | Rein textuelle byteweise Übertragung von Daten - Frames beginnen mit einem Doppelpunkt | 
-| Modbus RTU (Remote Terminal Unit) | Binäre byteweise Übertragung von Daten | 
+| Modbus ASCII | Textuelle byteweise Übertragung von Daten - Frames beginnen mit einem Doppelpunkt | 
+| Modbus RTU | Binäre byteweise Übertragung von Daten | 
 |  Modbus TCP | Übertragung der Daten in TCP Paketen | 
 
 
