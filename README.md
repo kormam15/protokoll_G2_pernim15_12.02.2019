@@ -65,7 +65,8 @@ Quelle: [Wikipedia](https://de.wikipedia.org/wiki/Representational_State_Transfe
 Das Modbus-Protokoll ist ein Kommunikationsprotokoll, welches auf einem Request/Response Prinzip basiert. Es wurde 1979 von Gould-Modicon für die Kommunikation mit seinen SPS ins Leben gerufen. In der Industrie hat sich der Modbus zu einem Standard entwickelt, da es sich um ein offenes Protokoll handelt. 
 Beispiel: Arduino Nano über UART - Standardisierte Bussysteme (zB UART) haben den Vorteil der Kompartibilität. 
 
-![]()
+![](protokoll_G2_pernim15_12.02.2019/Protokoll v6.0.PNG) 
+
 
 ### 3.2) - Kommunikation -
 
@@ -85,6 +86,7 @@ Jeder Busteilnehmer muss eine eindeutige Adresse haben, wobei Adresse 0 für ein
 Der Function-Code ist ein Byte, dass die Art des Requests bzw. der Response genauer festlegt. Für Requests und gültige Responses sind die Werte 1 bis 127 vorgesehen. Für Exception-Responses, also die Rückmeldung eines Fehlers, sind die Werte von 128 bis 255 zu verwenden. Der Function-Code 0 ist nicht erlaubt. 
 
 #### **Modbus ASCII:** 
+
 Hierbei werden die Frame-Bytes als ASCII-Text versendet. Für die Konfiguration der seriellen Schnittstelle wird standardmäßig 7E1 oder 7N2 verwendet -> nur 7 Daten-Bits! Geräte dürfen im Bedarfsfall aber auch eine davon abweichende Festlegung haben. 
 
 |  | 7 | E | 1 |  | 
