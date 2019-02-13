@@ -173,9 +173,9 @@ Vorteil: Faktoren im Binär-Bereich, besseres Ausnutzen der Bits
 
 ##### Scale Factor 
 
-zB Scale Factor = *10*
-23,3°C * *10* = 233 Dez. (00E9 Hex.)
--> Faktoren im Dezimalbereich
-Vorteil: Man kann als Mnesch besser damit agieren
+zB Scale Factor = *10* 
+23,3°C * *10* = 233 Dez. (00E9 Hex.) 
+-> Faktoren im Dezimalbereich 
+Vorteil: Man kann als Mnesch besser damit agieren 
 
 ___
