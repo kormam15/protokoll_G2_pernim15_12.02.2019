@@ -75,5 +75,34 @@ Beispiel: Arduino Nano über UART - Standardisierte Bussysteme (zB UART) haben d
 | Modbus RTU | Binäre byteweise Übertragung von Daten | 
 |  Modbus TCP | Übertragung der Daten in TCP Paketen | 
 
+Der Kommunikationsablauf beruht auf einem **Server/Client Prinzip**. Der Client (z.B. PC) sendet einen Request zum Server (z.B. Aktor). Dieser antworter mit einer Response. 
+
+![]()
+
+Jeder Busteilnehmer muss eine eindeutige Adresse haben, wobei Adresse 0 für einen Broadcast (an alle Knoten) reserviert ist. 
+Der Function-Code ist ein Byte, dass die Art des Requests bzw. der Response genauer festlegt. Für Requests und gültige Responses sind die Werte 1 bis 127 vorgesehen. Für Exception-Responses, also die Rückmeldung eines Fehlers, sind die Werte von 128 bis 255 zu verwenden. Der Function-Code 0 ist nicht erlaubt. 
+
+Der Socket ist der sog. Modbusserver. Er besitzt die Portnummer 502. Erst über die IP-Adresse und die Portnummer (Socket) kann der Rechner etwas mit der Information anfangen. 
+-> Warum keine Adresse + Errorcheck? 
+Aufgrund der IP-Adresse und der Prüfsumme (Checksum) 
+
+### Datenmodell
+
+1.1 
+
+Daten-Modell
+
+Das Modbus Daten-Modell unterscheidet vier Tabellen (Adressräume) für:
+
+| Tabelle | Beschreibung | Beispiel | 
+| ----------- | ---------- | ---------- | 
+| Discrete Input | Ein Discrete Input ist ein einzelnes Bit, das nur gelesen werden kann | Taster |  
+| Coils (Spulen) | Eine Coil ist ein Bit das gelesen und beschrieben werden kann | LED | 
+| Input Registers | Ein Input-Register ist ein 16-Bit Wert der nur gelesen werden kann | Temperatursensor | 
+| Hold-Registers | Ein Hold-Register ist ein 16-Bit Wert der gelesen und beschrieben werden kann | 7-Segment-Anzeige | 
+
+Pro Tabelle können in einer Protocol Data Unit Werte von 0 bis 65535 (dual codierbar in 16-Bit) verwendet werden. Im Modbus data model werden hingegen Adresswerte von 1 bis 65536 verwendet. Ein Adress-Mapping ist daher erforderlich. 
+z.B. Adresse 23 bekommen bei Wert 22 
+
 
 ___
