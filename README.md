@@ -14,9 +14,10 @@ Gruppe: 2
 ___
 
 ### Themen-Übersicht
- - **1)** - Easyprogrammer
- - **2)** - Intelligenter Sensor
- - **3)** - Feldbus
+ - **1)** - Easyprogrammer 
+ - **2)** - Intelligenter Sensor 
+ - **3)** - Feldbus 
+     -  **3.1)** - Modbus 
  
 ___
 
@@ -39,6 +40,8 @@ ___
 
 ## 3.) - Feldbus -
 
+Ein Feldbus ist ein Bussystem, das in einer Anlage Feldgeräte wie Sensoren und Aktoren zwecks Kommunikation mit einem Automatisierungsgerät verbindet. Wenn mehrere Kommunikationsteilnehmer ihre Nachrichten über dieselbe Leitung senden, dann muss festgelegt sein, wer (Kennung) was (Messwert, Befehl) wann (Initiative) sagt. Hierfür gibt es normierte Protokolle. 
+Quelle: [Wikipedia](https://de.wikipedia.org/wiki/Feldbus)  
 LAN und WLAN-Netzwerke sind keine Feldbussysteme, da diese nicht Echtzeitfähig und viel zu kompliziert sind. 
 
 #### Einsatzgebiete von Feldbussystemen 
@@ -53,6 +56,9 @@ Wir lernen nun speziell über den Modbus, da dieser in der Praxis häufig vorkom
 
 -> In Zukunft werden sog. REST Server benutzt werden.  
 Der Zweck von REST liegt schwerpunktmäßig auf der Maschine-zu-Maschine-Kommunikation. Der Vorteil von REST liegt darin, dass im WWW bereits ein Großteil der für REST nötigen Infrastruktur (z. B. Web- und Application-Server, HTTP-fähige Clients) vorhanden ist, und viele Web-Dienste per se REST-konform sind. Über Smartphones und Tablets kann so ein Steuern und Regeln erfolgen.  
+
 Quelle: [Wikipedia](https://de.wikipedia.org/wiki/Representational_State_Transfer)  
+
+
 
 ___
