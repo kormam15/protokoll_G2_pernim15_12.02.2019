@@ -149,4 +149,10 @@ Jeder Modbus Serial Line ASCII Frame hat folgenden Aufbau:
 | --- | --- | --- | --------- | --- | --- | --- | 
 | 3a | Korrenns Adresse | Function Code | Daten | LRC-Prüfsumme | CR | LF | 
 
+Die **LRC-Prüfsumme** bildet sich so:
+
+| : | 0C | 04 | 0000 0001 | A8 | \r | \n |  | 
+| --- | --- | --- | --------- | --- | --- | --- | --- |
+|  | 30H 43H | 30H 34H | 30 * 7 + 31 | |  |  | =258 Hex. = 600 Dez. 
+
 ___
