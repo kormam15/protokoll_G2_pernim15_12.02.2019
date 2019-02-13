@@ -151,8 +151,31 @@ Jeder Modbus Serial Line ASCII Frame hat folgenden Aufbau:
 
 Die **LRC-Prüfsumme** bildet sich so:
 
-| : | 0C | 04 | 0000 0001 | A8 | \r | \n |  | 
+| : | 0C | 04 | 0000 0001 | ? | \r | \n |  | 
 | --- | --- | --- | --------- | --- | --- | --- | --- |
-|  | 30H 43H | 30H 34H | 30 * 7 + 31 | |  |  | =258 Hex. = 600 Dez. 
+|  | 30H 43H | 30H 34H | 30H * 7 + 31H | |  |  | ->Summe = 258 Hex. = 600 Dez. | 
+
+600 - 256 * 2 = 88 Dez.
+-88 Dez. + 256 Dez. = A8 Hex = LRC-Prüfsumme
+
+### 3.7) - Response µC -> PC -
+
+| : | 0C | 04 | 02 | **1752*** | F8 | \r | \n |  
+| --- | --- | --- | --------- | --- | --- | --- | --- |  
+| 3a | Korrenns Adresse | Function Code | Anzahl der Byte | **Temperatur** | LRC-Prüfsumme | CR | LF | 
+
+-> Um den Wert einer Temperatur (zB 23.32°C) darstellen zu können, kann man verschiedene Varianten verwenden. 
+
+##### Festkommadarstellung 
+
+Vorteil: Faktoren im Binär-Bereich, besseres Ausnutzen der Bits 
+23,32°C * 256 = ~5970 Dez. (**1752 Hex.**) -> 5979 : 256 = 23,32°C 
+
+##### Scale Factor 
+
+zB Scale Factor = *10*
+23,3°C * *10* = 233 Dez. (00E9 Hex.)
+-> Faktoren im Dezimalbereich
+Vorteil: Man kann als Mnesch besser damit agieren
 
 ___
