@@ -69,9 +69,11 @@ Beispiel: Arduino Nano über UART - Standardisierte Bussysteme (zB UART) haben d
 
  Bei der eigentlichen Datenübertragung werden drei Varianten unterschieden:
 
-  | Modbus ASCII | Rein textuelle byteweise Übertragung von Daten. Frames beginnen mit einem Doppelpunkt | 
-  | Modbus RTU (Remote Terminal Unit) | Binäre byteweise Übertragung von Daten | 
-  |  Modbus TCP | Übertragung der Daten in TCP Paketen | 
+| Art | Übertragung |  
+| --------------------------------------- | -------- | ------- |  
+| Modbus ASCII | Rein textuelle byteweise Übertragung von Daten - Frames beginnen mit einem Doppelpunkt | 
+| Modbus RTU (Remote Terminal Unit) | Binäre byteweise Übertragung von Daten | 
+|  Modbus TCP | Übertragung der Daten in TCP Paketen | 
 
 
 ___
