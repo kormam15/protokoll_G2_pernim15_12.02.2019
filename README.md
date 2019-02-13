@@ -15,8 +15,8 @@ ___
 
 ### Themen-Übersicht
  - **1)** - [Easyprogrammer](https://github.com/HTLMechatronics/m15-la1-sx/blob/pernim15/protokoll_G2_pernim15_12.02.2019.md#Easyprogrammer)
- - **2)** - [Intelligenter Sensor](https://github.com/HTLMechatronics/m15-la1-sx/blob/pernim15/protokoll_G2_pernim15_12.02.2019.md#Intelligenter_Sensor)
- - **3)** - [Feldbu]()
+ - **2)** - [Intelligenter Sensor](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Intelligenter_Sensor)
+ - **3)** - [Feldbus](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Feldbus)
      - **3.1)** - [Modbus]()
      - **3.2)** - [Kommunikation]()
      - **3.3)** - [Datenmodell]()
