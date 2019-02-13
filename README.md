@@ -168,14 +168,14 @@ Die **LRC-Prüfsumme** bildet sich so:
 
 ##### Festkommadarstellung 
 
-Vorteil: Faktoren im Binär-Bereich, besseres Ausnutzen der Bits 
-23,32°C * 256 = ~5970 Dez. (**1752 Hex.**) -> 5979 : 256 = 23,32°C 
+Vorteil: Faktoren im Binär-Bereich, besseres Ausnutzen der Bits   
+23,32°C * 256 = ~5970 Dez. (**1752 Hex.**) -> 5979 : 256 = 23,32°C  
 
 ##### Scale Factor 
 
-zB Scale Factor = *10* 
-23,3°C * *10* = 233 Dez. (00E9 Hex.) 
--> Faktoren im Dezimalbereich 
-Vorteil: Man kann als Mnesch besser damit agieren 
+zB Scale Factor = *10*  
+23,3°C * *10* = 233 Dez. (00E9 Hex.)  
+-> Faktoren im Dezimalbereich  
+Vorteil: Man kann als Mnesch besser damit agieren  
 
 ___
