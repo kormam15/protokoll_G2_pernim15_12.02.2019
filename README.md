@@ -22,8 +22,8 @@ ___
      - **3.3)** - [Datenmodell](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Datenmodell)
      - **3.4)** - [Function-Codes](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Function-Codes)
      - **3.5)** - [Protokoll Definition](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Protokoll-Definition)
-     - **3.6)** - [Request PC -> µC](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Request-vomPC-zum-µC)
-     - **3.7)** - [Response µC -> PC](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Response-vom-µC-zum-PC)
+     - **3.6)** - [Request vom PC zum µC](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Request-vom-PC-zum-µC)
+     - **3.7)** - [Response vom µC zum PC](https://github.com/pernim15/protokoll_G2_pernim15_12.02.2019/blob/master/README.md#Response-vom-µC-zum-PC)
 ___
 
 ## Easyprogrammer
